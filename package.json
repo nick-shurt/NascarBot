@@ -1,0 +1,35 @@
+{
+  "name": "robotmiketest",
+  "version": "0.1.0",
+  "description": "A simple GroupMe bot",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "coinbase": "^2.0.8",
+    "director": "",
+    "espn-fantasy-football-api": "^0.11.0",
+    "fuse.js": "^7.1.0",
+    "mysql2": "^3.14.1",
+    "nodemailer": "^6.8.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sentiment": "^5.0.2",
+    "sprintf-js": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nick-shurt/GroupMeBotTest2"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
