@@ -142,6 +142,17 @@ function parseSwitchRequest(input) {
     const nameA = match[1].trim();
     const nameB = match[2].trim();
 
+    const map = {
+        svg: 'shane van gisbergen',
+        jhn: 'john h. nemechek'
+    };
+
+    nameA = map[nameA] || nameA;
+    nameA = map[nameB] || nameB;
+
+    console.log('nameA', nameA);
+    console.log('nameB', nameB);
+
     return [nameA, nameB];
 }
 
