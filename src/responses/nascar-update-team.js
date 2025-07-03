@@ -159,15 +159,15 @@ function parseSwitchRequest(input) {
 function getTeamName(userId) {
     const userTeamMap = {
         "25143759": "Team Nick",
-        /*"": "Team Rachel",
-        "": "Team Matt",
-        "": "Team Jim",
-        "": "Team Jru",
-        "": "Team Chives",
-        "": "Team Donna",
-        "": "Team Mike",
-        "": "Team Steve",
-        "": "Team Joey"*/
+        "112240973": "Team Rachel",
+        "32131344": "Team Matt",
+        "23131215": "Team Jim",
+        "18582070": "Team Jru",
+        "20405725": "Team Chives",
+        "55267854": "Team Donna",
+        "32131345": "Team Mike",
+        "14521823": "Team Steve",
+        "16189519": "Team Joey"
     };
 
     return userTeamMap[userId] || null;
