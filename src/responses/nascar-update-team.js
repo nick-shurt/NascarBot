@@ -139,8 +139,8 @@ function parseSwitchRequest(input) {
 
     if (!match) return null;
 
-    const nameA = match[1].trim();
-    const nameB = match[2].trim();
+    var nameA = match[1].trim();
+    var nameB = match[2].trim();
 
     const map = {
         svg: 'shane van gisbergen',
@@ -148,7 +148,7 @@ function parseSwitchRequest(input) {
     };
 
     nameA = map[nameA] || nameA;
-    nameA = map[nameB] || nameB;
+    nameB = map[nameB] || nameB;
 
     console.log('nameA', nameA);
     console.log('nameB', nameB);
