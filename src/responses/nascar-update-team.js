@@ -26,8 +26,6 @@ async function respond(msg) {
         var team = {};
         let columnA = null, columnB = null;
         let input = msg.text.replace(/.*@/i, "").trim();
-
-        //get team name of requestor
         let teamName = getTeamName(msg.sender_id);
 
         //get current week race details
