@@ -62,6 +62,13 @@ async function respond(msg) {
             driversValid = true;
         }
 
+        // if sub is for current week but race has already started, prevent sub
+        if (validInput && teamWeek === number && !isSubBeforeRaceStart(date)) {
+            console.log("Race has started. Lineups are currently locked.");
+            message = "Race has started. Lineups are currently locked.";
+            validInput = false;
+        }
+
         if (validInput) {
             //get team based on user and week
             const [rows2] = await connection.execute(
@@ -150,9 +157,6 @@ function parseSwitchRequest(input) {
     nameA = map[nameA] || nameA;
     nameB = map[nameB] || nameB;
 
-    console.log('nameA', nameA);
-    console.log('nameB', nameB);
-
     return [nameA, nameB];
 }
 
@@ -174,10 +178,16 @@ function getTeamName(userId) {
 }
 
 function getWeekNumber(str) {
-  const match = str.match(/\bweek\s+(\d+)\b/i);
-  return match ? parseInt(match[1], 10) : null;
+    const match = str.match(/\bweek\s+(\d+)\b/i);
+    return match ? parseInt(match[1], 10) : null;
 }
 
+function isSubBeforeRaceStart(raceStartDateTime) {
+    const inputPlus30 = new Date(new Date(raceStartDateTime).getTime() + 30 * 60 * 1000);
+    const now = new Date();
+
+    return now < inputPlus30;
+}
 
 exports.trigger = trigger;
 exports.respond = respond;
