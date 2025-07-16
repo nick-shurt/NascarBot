@@ -27,7 +27,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --verbose
 
 # Copy all other files (including the src/ folder)
 COPY . .
